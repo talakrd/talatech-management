@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tala Management | Digital Agency</title>
+
+<title>TalaTech Management</title>
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -11,136 +12,158 @@
 
 <body>
 
+<!-- HEADER -->
 <header class="header">
-<div class="logo">Tala <span>Management</span></div>
+<nav class="navbar">
+<div class="logo">TalaTech <span>Management</span></div>
 
-<nav id="nav">
-<a href="#home" data-i18n="home"></a>
-<a href="#about" data-i18n="about"></a>
-<a href="#services" data-i18n="services"></a>
-<a href="#process" data-i18n="process"></a>
-<a href="#portfolio" data-i18n="portfolio"></a>
-<a href="#pricing" data-i18n="pricing"></a>
-<a href="#faq" data-i18n="faq"></a>
-<a href="#contact" data-i18n="contact"></a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Services</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="hamburger" onclick="toggleMenu()">☰</div>
 </nav>
-
-<div class="lang">
-<button onclick="setLang('en')">EN</button>
-<button onclick="setLang('ku')">KU</button>
-<button onclick="setLang('ar')">AR</button>
-</div>
-
-<div class="menu" onclick="toggleMenu()">☰</div>
 </header>
 
 <!-- HERO -->
-<section id="home" class="hero reveal">
-<h1 data-i18n="title"></h1>
-<p data-i18n="subtitle"></p>
+<section id="home" class="hero">
+<h1>We Build Websites That Grow Your Business</h1>
+<p>Web design, branding, social media management & digital marketing.</p>
 
-<a href="#pricing" class="btn" data-i18n="btn1"></a>
-<a href="#contact" class="btn outline" data-i18n="btn2"></a>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section reveal">
-<h2 data-i18n="aboutTitle"></h2>
-
-<p class="text" data-i18n="aboutText"></p>
-
-<div class="grid">
-<div class="card"><h3 data-i18n="mission"></h3><p data-i18n="missionText"></p></div>
-<div class="card"><h3 data-i18n="vision"></h3><p data-i18n="visionText"></p></div>
-<div class="card"><h3 data-i18n="value"></h3><p data-i18n="valueText"></p></div>
-</div>
-</section>
-
-<!-- STATS -->
-<section class="section dark reveal">
-<h2 data-i18n="statsTitle"></h2>
-
-<div class="grid">
-<div class="card"><h3>50+</h3><p data-i18n="sweb"></p></div>
-<div class="card"><h3>30+</h3><p data-i18n="sclients"></p></div>
-<div class="card"><h3>100+</h3><p data-i18n="scampaigns"></p></div>
-<div class="card"><h3>98%</h3><p data-i18n="ssat"></p></div>
-</div>
+<a href="#pricing" class="btn">View Prices</a>
+<a href="#contact" class="btn outline">Contact Us</a>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="section reveal">
-<h2 data-i18n="servicesTitle"></h2>
+<section id="services" class="section">
+<h2>Our Services</h2>
 
 <div class="grid">
 
-<div class="card"><h3>Website Development</h3><p data-i18n="srv1"></p></div>
-<div class="card"><h3>Business Websites</h3><p data-i18n="srv2"></p></div>
-<div class="card"><h3>Premium Websites</h3><p data-i18n="srv3"></p></div>
-<div class="card"><h3>Logo Design</h3><p data-i18n="srv4"></p></div>
-<div class="card"><h3>Photo Editing</h3><p data-i18n="srv5"></p></div>
-<div class="card"><h3>Social Media</h3><p data-i18n="srv6"></p></div>
+<div class="card" onclick="toggleDetails(this)">
+<h3>Website Development</h3>
+<p>Starting from $125</p>
+<div class="details">
+We build modern responsive websites optimized for speed, SEO, and conversions.
+</div>
+</div>
+
+<div class="card" onclick="toggleDetails(this)">
+<h3>Social Media Management</h3>
+<p>$75/month</p>
+<div class="details">
+We manage Instagram, TikTok, and Facebook with daily content and growth strategy.
+</div>
+</div>
+
+<div class="card" onclick="toggleDetails(this)">
+<h3>Logo Design</h3>
+<p>$15</p>
+<div class="details">
+Professional logo design with high quality files for your brand identity.
+</div>
+</div>
+
+<div class="card" onclick="toggleDetails(this)">
+<h3>Photo Editing</h3>
+<p>$5 per photo</p>
+<div class="details">
+Business photo editing, product retouching, and social media graphics.
+10 photos = $29.99
+</div>
+</div>
 
 </div>
 </section>
 
-<!-- PROCESS -->
-<section id="process" class="section dark reveal">
-<h2 data-i18n="processTitle"></h2>
+<!-- CALCULATOR -->
+<section class="section">
+<h2>Price Calculator</h2>
 
-<div class="grid">
-<div class="card"><h3>1</h3><p data-i18n="p1"></p></div>
-<div class="card"><h3>2</h3><p data-i18n="p2"></p></div>
-<div class="card"><h3>3</h3><p data-i18n="p3"></p></div>
-<div class="card"><h3>4</h3><p data-i18n="p4"></p></div>
-<div class="card"><h3>5</h3><p data-i18n="p5"></p></div>
-<div class="card"><h3>6</h3><p data-i18n="p6"></p></div>
-</div>
-</section>
+<div class="calculator">
 
-<!-- PORTFOLIO -->
-<section id="portfolio" class="section reveal">
-<h2 data-i18n="portfolioTitle"></h2>
+<select id="service">
+<option value="125">Basic Website - $125</option>
+<option value="350">Business Website - $350</option>
+<option value="650">Premium Website - $650</option>
+<option value="15">Logo Design - $15</option>
+<option value="5">Photo Editing - $5</option>
+<option value="75">Social Media - $75</option>
+</select>
 
-<div class="grid">
-<div class="work"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"></div>
-<div class="work"><img src="https://images.unsplash.com/photo-1556761175-4b46a572b786"></div>
-<div class="work"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"></div>
-<div class="work"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"></div>
+<input type="number" id="qty" value="1" placeholder="Quantity">
+
+<button onclick="calculate()">Calculate</button>
+
+<h3 id="result">Total: $0</h3>
+
 </div>
 </section>
 
 <!-- PRICING -->
-<section id="pricing" class="section reveal">
-<h2 data-i18n="pricingTitle"></h2>
+<section id="pricing" class="section">
+<h2>Pricing</h2>
 
 <div class="grid">
-<div class="card"><h3>Basic</h3><p data-i18n="price1"></p></div>
-<div class="card"><h3>Business</h3><p data-i18n="price2"></p></div>
-<div class="card"><h3>Premium</h3><p data-i18n="price3"></p></div>
+
+<div class="card">
+<h3>Basic Website</h3>
+<p>$125</p>
 </div>
-</section>
 
-<!-- FAQ -->
-<section id="faq" class="section dark reveal">
-<h2 data-i18n="faqTitle"></h2>
+<div class="card">
+<h3>Business Website</h3>
+<p>$350</p>
+</div>
 
-<div class="grid">
-<div class="card"><h3>FAQ</h3><p data-i18n="faq1"></p></div>
-<div class="card"><h3>FAQ</h3><p data-i18n="faq2"></p></div>
-<div class="card"><h3>FAQ</h3><p data-i18n="faq3"></p></div>
-<div class="card"><h3>FAQ</h3><p data-i18n="faq4"></p></div>
+<div class="card">
+<h3>Premium Website</h3>
+<p>$650</p>
+</div>
+
+<div class="card">
+<h3>Logo Design</h3>
+<p>$15</p>
+</div>
+
+<div class="card">
+<h3>Photo Editing</h3>
+<p>$5 / photo</p>
+</div>
+
+<div class="card">
+<h3>Social Media</h3>
+<p>$75 / month</p>
+</div>
+
 </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section reveal">
-<h2 data-i18n="contactTitle"></h2>
+<section id="contact" class="section">
+<h2>Contact Us</h2>
+
+<form class="contact-form">
+<input type="text" placeholder="Name">
+<input type="email" placeholder="Email">
+<textarea placeholder="Message"></textarea>
+
+<button type="submit" class="btn">Send</button>
+</form>
 
 <p>WhatsApp: +964 751 584 7687</p>
 
-<a class="btn" href="https://wa.me/9647515847687">WhatsApp</a>
+<a class="btn" href="https://wa.me/9647515847687">Message on WhatsApp</a>
 </section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<p>© 2026 TalaTech Management</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
