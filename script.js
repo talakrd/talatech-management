@@ -1,169 +1,192 @@
-// ===============================
-// TALA MANAGEMENT
-// MULTI LANGUAGE SYSTEM
-// ===============================
+// COUNTERS
 
-const translations = {
-    en: {
-        home: "Home",
-        services: "Services",
-        pricing: "Pricing",
-        about: "About",
-        faq: "FAQ",
-        contact: "Contact"
-    },
+const counters = document.querySelectorAll('.counter');
 
-    ku: {
-        home: "سەرەکی",
-        services: "خزمەتگوزارییەکان",
-        pricing: "نرخەکان",
-        about: "دەربارە",
-        faq: "پرسیارە باوەکان",
-        contact: "پەیوەندی"
-    },
+counters.forEach(counter => {
+    const updateCounter = () => {
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText;
 
-    ar: {
-        home: "الرئيسية",
-        services: "الخدمات",
-        pricing: "الأسعار",
-        about: "حولنا",
-        faq: "الأسئلة الشائعة",
-        contact: "اتصل بنا"
-    }
-};
+        const increment = target / 100;
 
-// ===============================
-// LANGUAGE SWITCHER
-// ===============================
-
-function setLanguage(lang) {
-
-    const elements = document.querySelectorAll(
-        "[data-en],[data-ku],[data-ar]"
-    );
-
-    elements.forEach(element => {
-
-        if (lang === "en") {
-            element.innerHTML = element.dataset.en;
+        if(current < target){
+            counter.innerText =
+            Math.ceil(current + increment);
+            setTimeout(updateCounter,20);
+        }else{
+            counter.innerText = target;
         }
+    };
 
-        if (lang === "ku") {
-            element.innerHTML = element.dataset.ku;
-        }
+    updateCounter();
+});
 
-        if (lang === "ar") {
-            element.innerHTML = element.dataset.ar;
-        }
+// FAQ
+
+const faqItems =
+document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+
+    const button =
+    item.querySelector('.faq-question');
+
+    button.addEventListener('click', () => {
+
+        item.classList.toggle('active');
+
     });
 
-    localStorage.setItem("language", lang);
+});
 
-    if (lang === "ar") {
-        document.documentElement.dir = "rtl";
-        document.documentElement.lang = "ar";
-    } else {
-        document.documentElement.dir = "ltr";
+// SERVICES
+
+const expandButtons =
+document.querySelectorAll('.expand-btn');
+
+expandButtons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        const details =
+        button.nextElementSibling;
+
+        if(details.style.display === 'block'){
+            details.style.display = 'none';
+            button.innerText = 'Learn More';
+        }else{
+            details.style.display = 'block';
+            button.innerText = 'Show Less';
+        }
+
+    });
+
+});
+
+// CALCULATOR
+
+const websiteType =
+document.getElementById('websiteType');
+
+const logoOption =
+document.getElementById('logoOption');
+
+const seoOption =
+document.getElementById('seoOption');
+
+const socialOption =
+document.getElementById('socialOption');
+
+const totalPrice =
+document.getElementById('totalPrice');
+
+function updatePrice(){
+
+    if(!websiteType) return;
+
+    let total =
+    Number(websiteType.value);
+
+    if(logoOption.checked){
+        total += 15;
     }
+
+    if(seoOption.checked){
+        total += 50;
+    }
+
+    if(socialOption.checked){
+        total += 75;
+    }
+
+    totalPrice.innerText =
+    '$' + total;
+
 }
 
-// ===============================
-// LOAD SAVED LANGUAGE
-// ===============================
+if(websiteType){
 
-window.addEventListener("load", () => {
+websiteType.addEventListener(
+'change',
+updatePrice
+);
 
-    const savedLanguage =
-        localStorage.getItem("language") || "en";
+logoOption.addEventListener(
+'change',
+updatePrice
+);
 
-    setLanguage(savedLanguage);
+seoOption.addEventListener(
+'change',
+updatePrice
+);
 
-});
+socialOption.addEventListener(
+'change',
+updatePrice
+);
 
-// ===============================
-// SCROLL ANIMATION
-// ===============================
+}
 
-const observer = new IntersectionObserver(entries => {
+// TESTIMONIALS
 
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform =
-                "translateY(0)";
-        }
-
-    });
-
-});
-
+const testimonials =
 document.querySelectorAll(
-    ".service-card, .price-card, .faq-item"
-).forEach(card => {
+'.testimonial'
+);
 
-    card.style.opacity = "0";
-    card.style.transform =
-        "translateY(30px)";
-    card.style.transition =
-        "all 0.7s ease";
+let currentSlide = 0;
 
-    observer.observe(card);
+if(testimonials.length){
 
-});
+setInterval(() => {
 
-// ===============================
-// FLOATING EFFECT
-// ===============================
+    testimonials[currentSlide]
+    .classList.remove('active');
 
-document.addEventListener("mousemove", e => {
+    currentSlide++;
 
-    const shapes =
-        document.querySelectorAll(".bg-shape");
+    if(currentSlide >=
+       testimonials.length){
+        currentSlide = 0;
+    }
 
-    shapes.forEach((shape, index) => {
+    testimonials[currentSlide]
+    .classList.add('active');
 
-        const speed = (index + 1) * 0.01;
+},4000);
 
-        shape.style.transform =
-            `translate(${e.clientX * speed}px, ${e.clientY * speed}px)`;
+}
 
-    });
-
-});
-
-// ===============================
 // SMOOTH SCROLL
-// ===============================
 
-document.querySelectorAll('a[href^="#"]')
+document
+.querySelectorAll('a[href^="#"]')
 .forEach(anchor => {
 
-    anchor.addEventListener("click", function(e) {
+anchor.addEventListener(
+'click',
+function(e){
 
-        e.preventDefault();
+e.preventDefault();
 
-        const target =
-            document.querySelector(
-                this.getAttribute("href")
-            );
+const target =
+document.querySelector(
+this.getAttribute('href')
+);
 
-        if(target){
+if(target){
 
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
+target.scrollIntoView({
+behavior:'smooth'
+});
 
-        }
-
-    });
+}
 
 });
 
-// ===============================
-// CONSOLE MESSAGE
-// ===============================
+});
 
 console.log(
-    "Tala Management Website Loaded Successfully"
+'Tala Management Loaded'
 );
