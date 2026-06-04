@@ -781,18 +781,41 @@ box-shadow:0 15px 35px rgba(0,0,0,.08);
     transform: scale(1.03);
     position: relative;
     overflow: hidden;
-}.ribbon{
+}
+.price-card{
+    position:relative;
+    overflow:visible; /* IMPORTANT */
+}
+
+.ribbon{
     position:absolute;
-    top:20px;
-    right:-55px;
-    width:180px;
+    top:25px;
+    right:-60px;
+    width:220px;
     text-align:center;
-    padding:8px 0;
+    padding:10px 0;
     color:white;
-    font-size:12px;
+    font-size:13px;
     font-weight:700;
     transform:rotate(45deg);
-    z-index:100;
+    z-index:999;
+    display:block;
+    visibility:visible;
+}
+.basic-website .ribbon{
+    background:#22c55e;
+}
+
+.business-website .ribbon{
+    background:#f59e0b;
+}
+
+.premium-website .ribbon{
+    background:#8b5cf6;
+}
+
+.premium-business .ribbon{
+    background:#06b6d4;
 }
 }
 
