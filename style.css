@@ -846,4 +846,13 @@ box-shadow:0 15px 35px rgba(0,0,0,.08);
 
 .premium-business::before {
     content: "NEW";
+    position: absolute;
+    top: 15px;
+    right: -40px;
+    background: #06b6d4;
+    color: white;
+    padding: 8px 40px;
+    font-size: 12px;
+    font-weight: 700;
+    transform: rotate(45deg);
 }
