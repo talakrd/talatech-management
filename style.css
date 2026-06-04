@@ -693,3 +693,30 @@ justify-content:center;
 }
 
 }
+.footer a{
+color:#2563eb;
+text-decoration:none;
+font-weight:600;
+}
+.footer a:hover{
+text-decoration:underline;
+}
+/* RTL Support */
+body[dir="rtl"]{
+text-align:right;
+}
+body[dir="rtl"] .header{
+flex-direction:row-reverse;
+}
+body[dir="rtl"] .nav-links{
+flex-direction:row-reverse;
+}
+body[dir="rtl"] .faq-question{
+text-align:right;
+}
+body[dir="rtl"] .hero-buttons{
+flex-direction:row-reverse;
+}
+body[dir="rtl"] .contact-grid{
+direction:rtl;
+}
