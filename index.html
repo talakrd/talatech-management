@@ -3,1083 +3,709 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Tala Management | Digital Growth Agency</title>
-
-<meta name="description" content="Professional Websites, Social Media Management, Logo Design, Photo Editing and Digital Marketing Services.">
-
-<link rel="stylesheet" href="style.css">
+<title>Tala Management | Digital Agency</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ================= GLOBAL ================= */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+body{background:#0f172a;color:white;overflow-x:hidden}
+
+/* background */
+.bg{
+position:fixed;inset:0;
+background:radial-gradient(circle at 20% 20%,#2563eb33,transparent),
+radial-gradient(circle at 80% 70%,#8b5cf633,transparent);
+z-index:-1;
+}
+
+/* header */
+header{
+display:flex;
+justify-content:space-between;
+padding:20px 60px;
+position:sticky;
+top:0;
+background:#0f172add;
+backdrop-filter:blur(10px);
+}
+
+.logo{font-size:22px;font-weight:800}
+.logo span{color:#38bdf8}
+
+.nav a{
+color:white;
+margin:0 10px;
+text-decoration:none;
+font-weight:500;
+opacity:.8;
+}
+.nav a:hover{opacity:1}
+
+/* hero */
+.hero{
+padding:120px 60px;
+text-align:center;
+}
+
+.hero h1{
+font-size:54px;
+margin-bottom:20px;
+}
+
+.hero p{
+opacity:.7;
+max-width:700px;
+margin:auto;
+}
+
+/* buttons */
+.btn{
+padding:12px 20px;
+border-radius:10px;
+border:none;
+cursor:pointer;
+margin:10px;
+font-weight:600;
+}
+
+.primary{background:#2563eb;color:white}
+.secondary{background:transparent;border:2px solid white;color:white}
+
+/* sections */
+.section{
+padding:80px 60px;
+}
+
+.title{
+font-size:32px;
+margin-bottom:20px;
+}
+
+/* cards */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:16px;
+transition:.3s;
+}
+.card:hover{transform:translateY(-5px);background:#334155}
+
+/* stats */
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.stat{
+background:#1e293b;
+padding:30px;
+text-align:center;
+border-radius:16px;
+}
+
+/* pricing */
+.price{
+font-size:28px;
+color:#38bdf8;
+margin:10px 0;
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- Background Shapes -->
-<div class="bg-shape shape1"></div>
-<div class="bg-shape shape2"></div>
-<div class="bg-shape shape3"></div>
+<div class="bg"></div>
 
-<!-- HEADER -->
+<header>
+<div class="logo">Tala <span>Management</span></div>
 
-<header class="header">
-
-<div class="logo">
-Tala <span>Management</span>
-</div>
-
-<nav>
-
-<ul class="nav-links">
-
-<li><a href="#home" data-en="Home" data-ku="سەرەکی" data-ar="الرئيسية">Home</a></li>
-<li><a href="#services" data-en="Services" data-ku="خزمەتگوزارییەکان" data-ar="الخدمات">Services</a></li>
-<li><a href="#pricing" data-en="Pricing" data-ku="نرخەکان" data-ar="الأسعار">Pricing</a></li>
-<li><a href="#portfolio" data-en="Portfolio" data-ku="نمونەکارەکان" data-ar="الأعمال">Portfolio</a></li>
-<li><a href="#about" data-en="About" data-ku="دەربارە" data-ar="حول">About</a></li>
-<li><a href="#contact" data-en="Contact" data-ku="پەیوەندی" data-ar="اتصل بنا">Contact</a></li>
-
-</ul>
-
+<nav class="nav">
+<a href="#home" data-en="Home" data-ku="سەرەکی" data-ar="الرئيسية">Home</a>
+<a href="#services" data-en="Services" data-ku="خزمەت" data-ar="خدمات">Services</a>
+<a href="#pricing" data-en="Pricing" data-ku="نرخ" data-ar="أسعار">Pricing</a>
+<a href="#contact" data-en="Contact" data-ku="پەیوەندی" data-ar="اتصال">Contact</a>
 </nav>
-
-<div class="language-switcher">
-
-<button onclick="setLanguage('en')">
-🇬🇧
-</button>
-
-<button onclick="setLanguage('ku')">
-کوردی
-</button>
-
-<button onclick="setLanguage('ar')">
-العربية
-</button>
-
-</div>
-
 </header>
 
-<!-- HERO -->
+<section class="hero" id="home">
 
-<section id="home" class="hero">
+<h1 data-en="We Build Digital Empires"
+data-ku="ئێمە ئەمپایری دیجیتاڵ دروست دەکەین"
+data-ar="نبني إمبراطوريات رقمية">
 
-<div class="hero-content">
-
-<h1
-data-en="Helping Businesses Grow Online"
-data-ku="یارمەتیدانی بزنسەکان بۆ گەشەکردن لە ئینتەرنێت"
-data-ar="نساعد الشركات على النمو عبر الإنترنت">
-Helping Businesses Grow Online
+We Build Digital Empires
 </h1>
 
-<p
-data-en="Professional websites, branding, social media management and digital growth solutions."
-data-ku="دروستکردنی وێبسایت و براندینگ و بەڕێوەبردنی سۆشیال میدیا."
-data-ar="مواقع احترافية وإدارة وسائل التواصل الاجتماعي وحلول النمو الرقمي.">
+<p data-en="Websites, branding, marketing and automation systems"
+data-ku="وێبسایت و براندینگ و مارکێتینگ"
+data-ar="مواقع وتسويق وأتمتة">
 
-Professional websites, branding, social media management and digital growth solutions.
-
+Websites, branding, marketing and automation systems
 </p>
 
-<div class="hero-buttons">
-
-<a href="#pricing" class="btn primary-btn">
-View Pricing
-</a>
-
-<a href="https://wa.me/9647515847687" class="btn secondary-btn">
-WhatsApp
-</a>
-
-</div>
-
-</div>
+<button class="btn primary">Get Started</button>
+<button class="btn secondary">Learn More</button>
 
 </section>
 
-<!-- STATS -->
-<!-- STATS -->
-
 <section class="section">
 
-<div class="section-header">
-<h2
-data-en="Our Results"
-data-ku="ئەنجامەکانمان"
-data-ar="نتائجنا">
-Our Results
-</h2>
-
-<p
-data-en="Numbers that reflect our commitment to quality."
-data-ku="ژمارەیەک کە پیشاندەری کوالێتی کارەکانمانە."
-data-ar="أرقام تعكس التزامنا بالجودة.">
-Numbers that reflect our commitment to quality.
-</p>
-</div>
+<h2 class="title">Our Impact / کاریگەری / تأثير</h2>
 
 <div class="stats">
-<section class="stats">
 
-<div class="stat-card">
-<h2 class="counter" data-target="50">0</h2>
-<p>Websites Built</p>
+<div class="stat">
+<h2>120+</h2>
+<p>Websites / وێبسایت / مواقع</p>
 </div>
 
-<div class="stat-card">
-<h2 class="counter" data-target="100">0</h2>
-<p>Projects Completed</p>
+<div class="stat">
+<h2>240+</h2>
+<p>Projects / پڕۆژە / مشاريع</p>
 </div>
 
-<div class="stat-card">
-<h2 class="counter" data-target="98">0</h2>
-<p>% Client Satisfaction</p>
+<div class="stat">
+<h2>98%</h2>
+<p>Success / سەرکەوتن / نجاح</p>
 </div>
 
-<div class="stat-card">
-<h2 class="counter" data-target="24">0</h2>
-<p>Hour Response Time</p>
-</div>
-
-</div>
-</section>
-
-<!-- SERVICES -->
-
-<section id="services" class="section">
-
-<div class="section-header">
-
-<h2 data-en="Explore Our Services" data-ku="خزمەتگوزارییەکانمان ببینە" data-ar="استكشف خدماتنا"> Explore Our Services </h2>
-
-<p>
-Click any service to learn more.
-</p>
-
-</div>
-
-<div class="services-grid">
-
-<div class="service-card">
-
-<div class="service-icon">
-🌐
-</div>
-
-<h3>
-Website Development
-</h3>
-
-<p>
-Modern responsive websites built to convert visitors into customers.
-</p>
-
-<button class="expand-btn">
-Learn More
-</button>
-
-<div class="service-details">
-
-<ul>
-
-<li>Mobile Responsive</li>
-
-<li>Professional Design</li>
-
-<li>WhatsApp Integration</li>
-
-<li>Fast Loading</li>
-
-<li>SEO Friendly</li>
-
-</ul>
-
-</div>
-
-</div>
-
-<div class="service-card">
-
-<div class="service-icon">
-🎨
-</div>
-
-<h3>
-Logo Design
-</h3>
-
-<p>
-Professional logos designed for businesses and brands.
-</p>
-
-<button class="expand-btn">
-Learn More
-</button>
-
-<div class="service-details">
-
-<ul>
-
-<li>Modern Branding</li>
-
-<li>Vector Files</li>
-
-<li>High Resolution</li>
-
-<li>Social Media Ready</li>
-
-</ul>
-
-</div>
-
-</div>
-
-<div class="service-card">
-
-<div class="service-icon">
-📸
-</div>
-
-<h3>
-Photo Editing
-</h3>
-
-<p>
-Professional editing for businesses and social media.
-</p>
-
-<button class="expand-btn">
-Learn More
-</button>
-
-<div class="service-details">
-
-<ul>
-
-<li>Retouching</li>
-
-<li>Background Removal</li>
-
-<li>Business Graphics</li>
-
-<li>Advertisement Images</li>
-
-</ul>
-
-</div>
-
-</div>
-
-<div class="service-card">
-
-<div class="service-icon">
-📱
-</div>
-
-<h3>
-Social Media Management
-</h3>
-
-<p>
-Content creation and audience growth strategies.
-</p>
-
-<button class="expand-btn">
-Learn More
-</button>
-
-<div class="service-details">
-
-<ul>
-
-<li>Content Planning</li>
-
-<li>Account Management</li>
-
-<li>Audience Growth</li>
-
-<li>Monthly Reports</li>
-
-</ul>
-
-</div>
-
-</div>
-
-<div class="service-card">
-
-<div class="service-icon">
-🚀
-</div>
-
-<h3>
-Digital Marketing
-</h3>
-
-<p>
-Advertising campaigns that generate leads and sales.
-</p>
-
-<button class="expand-btn">
-Learn More
-</button>
-
-<div class="service-details">
-
-<ul>
-
-<li>Facebook Ads</li>
-
-<li>Instagram Ads</li>
-
-<li>Lead Generation</li>
-
-<li>Performance Tracking</li>
-
-</ul>
-
-</div>
-
-</div>
-
-<div class="service-card">
-
-<div class="service-icon">
-🔍
-</div>
-
-<h3>
-SEO Optimization
-</h3>
-
-<p>
-Improve visibility and rank higher on Google.
-</p>
-
-<button class="expand-btn">
-Learn More
-</button>
-
-<div class="service-details">
-
-<ul>
-
-<li>Keyword Research</li>
-
-<li>On Page SEO</li>
-
-<li>Technical SEO</li>
-
-<li>Local SEO</li>
-
-</ul>
-
-</div>
-
+<div class="stat">
+<h2>24/7</h2>
+<p>Support / پشتگیری / دعم</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- CONTINUE WITH PRICING, CALCULATOR, PORTFOLIO, TESTIMONIALS, FAQ, CONTACT, FOOTER -->
-<!-- PRICING -->
+<section class="section">
 
-<section id="pricing" class="section">
+<h2 class="title">Services / خزمەتگوزاری / خدمات</h2>
 
-<div class="section-header">
-<h2 data-en="Services & Pricing" data-ku="خزمەتگوزارییەکان و نرخەکان" data-ar="الخدمات والأسعار"> Services & Pricing </h2>
-<p>Transparent pricing with custom solutions available.</p>
+<div class="grid">
+
+<div class="card">
+<h3>Website Development</h3>
+<p>Modern responsive websites</p>
+<p>وێبسایتێکی نوێ و خێرا</p>
+<p>مواقع حديثة</p>
 </div>
 
-<div class="pricing-grid">
-
-<div class="price-card basic-website">
-<div class="ribbon">FASTEST SETUP</div>
-<h3>Basic Website</h3>
-<div class="price">Starting at $99</div>
-
-<ul>
-<li>Responsive Design</li>
-<li>Mobile Friendly</li>
-<li>Contact Section</li>
-<li>WhatsApp Integration</li>
-</ul>
-
-<a href="https://wa.me/9647515847687?text=Hi%20Tala%20Management,%20I%20am%20interested%20in%20the%20Basic%20Website%20Package" class="btn primary-btn">
-Get Started
-</a>
-
-</div>
-
-<div class="price-card featured business-website">
-<div class="ribbon">MOST POPULAR</div>
-<h3>Business Website</h3>
-<div class="price">Starting at $199</div>
-
-<ul>
-<li>Everything in Basic</li>
-<li>Multiple Pages</li>
-<li>SEO Setup</li>
-<li>Professional Design</li>
-</ul>
-
-<a href="https://wa.me/9647515847687?text=Hi%20Tala%20Management,%20I%20am%20interested%20in%20the%20Business%20Package" class="btn primary-btn">
-Get Started
-</a>
-
-</div>
-
-<div class="price-card premium-website">
-<div class="ribbon">RECOMMENDED</div>
-<h3>Premium Website</h3>
-<div class="price">Starting at $399</div>
-
-<ul>
-<li>Everything in Business</li>
-<li>Advanced Features</li>
-<li>Priority Support</li>
-<li>Premium Design</li>
-</ul>
-
-<a href="https://wa.me/9647515847687?text=Hi%20Tala%20Management,%20I%20am%20interested%20in%20the%20Premium%20Package" class="btn primary-btn">
-Get Started
-</a>
-
-</div>
-
-
-<div class="price-card featured premium-business">
-<div class="ribbon">NEW</div>
-<h3>Premium Business System</h3>
-
-<div class="price">Starting at $799</div>
-
-<ul>
-<li>Custom Business Website</li>
-<li>Social Media Management</li>
-<li>Professional Branding</li>
-<li>Logo Design Included</li>
-<li>SEO Optimization</li>
-<li>Business Email Setup</li>
-<li>Analytics & Reports</li>
-<li>Priority Support</li>
-<li>30 Days Management</li>
-</ul>
-
-<a href="https://wa.me/9647515847687?text=Hi%20Tala%20Management,%20I%20am%20interested%20in%20the%20Premium%20Business%20System" class="btn primary-btn">
-Get Started
-</a>
-</div>
-<div class="price-card">
-
+<div class="card">
 <h3>Logo Design</h3>
+<p>Brand identity design</p>
+<p>دیزاینی براند</p>
+<p>تصميم شعارات</p>
+</div>
 
-<div class="price">Starting at $35</div>
+<div class="card">
+<h3>SEO Optimization</h3>
+<p>Rank higher on Google</p>
+<p>پێشکەوتن لە گووگڵ</p>
+<p>تحسين SEO</p>
+</div>
 
-<ul>
-<li>Professional Logo</li>
-<li>High Resolution</li>
-<li>Social Media Ready</li>
-<li>Commercial Use</li>
-</ul>
-
-<a href="https://wa.me/9647515847687?text=Hi%20Tala%20Management,%20I%20want%20a%20Logo%20Design" class="btn primary-btn">
-Order Logo
-</a>
-
+<div class="card">
+<h3>Marketing</h3>
+<p>Ads & campaigns</p>
+<p>ڕیکلام</p>
+<p>إعلانات</p>
 </div>
 
 </div>
+
+</section>
+
 <section class="section">
-<div class="section-header">
-<h2
-data-en="Social Media Services"
-data-ku="خزمەتگوزارییەکانی سۆشیال میدیا"
-data-ar="خدمات وسائل التواصل الاجتماعي">
-Social Media Services
-</h2>
-<p
-data-en="Grow your brand with professional social media management."
-data-ku="براندەکەت گەشە پێبدە بە بەڕێوەبردنی پیشەیی سۆشیال میدیا."
-data-ar="طوّر علامتك التجارية من خلال إدارة احترافية لوسائل التواصل الاجتماعي.">
-Grow your brand with professional social media management.
-</p>
-</div>
-<div class="pricing-grid">
-<div class="price-card">
-<h3
-data-en="Social Media Management"
-data-ku="بەڕێوەبردنی سۆشیال میدیا"
-data-ar="إدارة وسائل التواصل الاجتماعي">
-Social Media Management
-</h3>
-<div class="price">
-Starting at $75/month
-</div>
-<ul>
-<li data-en="Content Planning" data-ku="پلانی ناوەڕۆک" data-ar="تخطيط المحتوى">Content Planning</li>
-<li data-en="Account Management" data-ku="بەڕێوەبردنی هەژمار" data-ar="إدارة الحساب">Account Management</li>
-<li data-en="Audience Growth" data-ku="گەشەپێدانی شوێنکەوتووان" data-ar="زيادة المتابعين">Audience Growth</li>
-<li data-en="Monthly Reports" data-ku="ڕاپۆرتی مانگانە" data-ar="تقارير شهرية">Monthly Reports</li>
-</ul>
-</div>
-<div class="price-card">
-<h3
-data-en="Page Creation"
-data-ku="دروستکردنی پەیج"
-data-ar="إنشاء الصفحات">
-Page Creation
-</h3>
-<div class="price">
-Starting at $50
-</div>
-<ul>
-<li>Facebook Page Setup</li>
-<li>Instagram Setup</li>
-<li>TikTok Setup</li>
-<li>Professional Branding</li>
-</ul>
-</div>
-<div class="price-card">
-<h3
-data-en="Post Creation"
-data-ku="دروستکردنی پۆست"
-data-ar="إنشاء المنشورات">
-Post Creation
-</h3>
-<div class="price">
-Custom Quote
-</div>
-<ul>
-<li>Product Photo Editing</li>
-<li>Professional Captions</li>
-<li>Custom Graphics</li>
-<li>Marketing Posts</li>
-</ul>
-</div>
-<div class="price-card">
-<h3
-data-en="Advertising & Sponsorship"
-data-ku="ڕیکلام و سپۆنسەر"
-data-ar="الإعلانات والرعاية">
-Advertising & Sponsorship
-</h3>
-<div class="price">
-Starting at $7
-</div>
-<ul>
-<li>Personal Account Promotion ($7+)</li>
-<li>Platform Price Varies</li>
-<li>Page Sponsorship ($20+)</li>
-<li>Business Promotions</li>
-</ul>
-</div>
-<div class="price-card">
-<h3
-data-en="Weekly & Monthly Sponsors"
-data-ku="سپۆنسەری هەفتانە و مانگانە"
-data-ar="الرعاية الأسبوعية والشهرية">
-Weekly & Monthly Sponsors
-</h3>
-<div class="price">
-Custom Quote
-</div>
-<ul>
-<li>Weekly Promotion Packages</li>
-<li>Monthly Promotion Packages</li>
-<li>Business Exposure</li>
-<li>Custom Pricing</li>
-</ul>
-</div>
-<div class="price-card">
-<h3
-data-en="Video Advertising"
-data-ku="ڤیدیۆی ڕیکلامی"
-data-ar="إعلانات الفيديو">
-Video Advertising
-</h3>
-<div class="price">
-Custom Quote
-</div>
-<ul>
-<li>Video Editing</li>
-<li>Advertisement Videos</li>
-<li>Company Promotions</li>
-<li>Price Based on Length & Detail</li>
-</ul>
-</div>
-</div>
-</section>
 
+<h2 class="title">Pricing / نرخەکان / الأسعار</h2>
 
-<!-- COST CALCULATOR -->
+<div class="grid">
 
-<section class="section calculator-section">
-
-<div class="section-header">
-<h2
-data-en="Website Cost Calculator"
-data-ku="ژمێرەری نرخی وێبسایت"
-data-ar="حاسبة تكلفة الموقع الإلكتروني">
-Website Cost Calculator
-</h2>
-<p data-en="Get an instant estimate." data-ku="خەمڵاندنێکی خێرا وەربگرە." data-ar="احصل على تقدير فوري."> Get an instant estimate. </p>
+<div class="card">
+<h3>Starter</h3>
+<div class="price">$99</div>
+<p>Basic website</p>
+<p>وێبسایت سادە</p>
+<p>موقع بسيط</p>
 </div>
 
-<div class="calculator-card">
-
-<label data-en="Website Type" data-ku="جۆری وێبسایت" data-ar="نوع الموقع"> Website Type </label>
-
-<select id="websiteType">
-
-<option value="99">Basic Website (Starting at $99)</option>
-
-<option value="199">Business Website (Starting at $199)</option>
-
-<option value="399">Premium Website (Starting at $399)</option>
-  
-<option value="799">Premium Business System (Starting at $799)</option>
-</select>
-
-<label>
-
-<input type="checkbox" id="logoOption">
-
-Add Logo Design ($15)
-
-</label>
-
-<label>
-
-<input type="checkbox" id="seoOption">
-
-SEO Setup ($50)
-
-</label>
-
-<label>
-
-<input type="checkbox" id="socialOption">
-
-Social Media Setup ($75)
-
-</label>
-
-<h3>
-Estimated Price:
-<span id="totalPrice">$99</span>
-</h3>
-
-<a id="quoteButton"
-href="https://wa.me/9647515847687"
-class="btn primary-btn">
-
-Request This Package
-
-</a>
-
+<div class="card">
+<h3>Business</h3>
+<div class="price">$199</div>
+<p>Professional system</p>
+<p>سیستەمی بزنس</p>
+<p>نظام أعمال</p>
 </div>
 
-</section>
-
-<!-- PROCESS -->
-
-<section class="section process-section">
-
-<div class="section-header">
-
-<h2
-data-en="How We Work"
-data-ku="چۆن کار دەکەین"
-data-ar="كيف نعمل">
-How We Work
-</h2>
-
-<p>
-<p
-data-en="Simple and transparent process."
-data-ku="پرۆسەیەکی سادە و ڕوون."
-data-ar="عملية بسيطة وشفافة.">
-Simple and transparent process.
-</p>
-</p>
-
-</div>
-
-<div class="timeline">
-
-<div class="timeline-item">
-<div class="timeline-number">1</div>
-<h3>Consultation</h3>
-<p>We discuss your business goals.</p>
-</div>
-
-<div class="timeline-item">
-<div class="timeline-number">2</div>
-<h3>Planning</h3>
-<p>We design the project strategy.</p>
-</div>
-
-<div class="timeline-item">
-<div class="timeline-number">3</div>
-<h3>Development</h3>
-<p>We build and optimize everything.</p>
-</div>
-
-<div class="timeline-item">
-<div class="timeline-number">4</div>
-<h3>Launch</h3>
-<p>Your project goes live.</p>
+<div class="card">
+<h3>Premium</h3>
+<div class="price">$399</div>
+<p>Full digital system</p>
+<p>سیستەمی تەواو</p>
+<p>نظام كامل</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- PORTFOLIO -->
+</body>
+</html>
+<!-- =========================
+PROCESS SECTION
+========================= -->
 
-<section id="portfolio" class="section">
-
-<div class="section-header">
-
-<h2 data-en="Project Showcase" data-ku="پیشاندانی پرۆژەکان" data-ar="معرض المشاريع"> Project Showcase </h2>
-
-<p>
-<p
-data-en="Examples of businesses we can build for."
-data-ku="نمونەی ئەو بزنسانەی دەتوانین بۆیان دروست بکەین."
-data-ar="أمثلة على الأعمال التي يمكننا إنشاؤها.">
-Examples of businesses we can build for.
-</p>
-</p>
-
-</div>
-
-<div class="portfolio-grid">
-
-<div class="portfolio-item">
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900" alt="">
-<div class="portfolio-overlay">
-Car Dealership Website
-</div>
-</div>
-
-<div class="portfolio-item">
-<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900" alt="">
-<div class="portfolio-overlay">
-Restaurant Website
-</div>
-</div>
-
-<div class="portfolio-item">
-<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900" alt="">
-<div class="portfolio-overlay">
-Gym Website
-</div>
-</div>
-
-<div class="portfolio-item">
-<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900" alt="">
-<div class="portfolio-overlay">
-Corporate Website
-</div>
-</div>
-
-</div>
-
-</section>
-
-<!-- TESTIMONIALS -->
-
-<section class="section testimonials-section">
-
-<div class="section-header">
-<h2 data-en="What Clients Say" data-ku="کڕیارەکانمان چی دەڵێن" data-ar="ماذا يقول عملاؤنا"> What Clients Say </h2>
-</div>
-
-<div class="testimonial-slider">
-
-<div class="testimonial active">
-★★★★★
-<p>
-Excellent communication and a professional website.
-</p>
-<h4>Business Owner</h4>
-</div>
-
-<div class="testimonial">
-★★★★★
-<p>
-Fast delivery and amazing support.
-</p>
-<h4>Restaurant Client</h4>
-</div>
-
-<div class="testimonial">
-★★★★★
-<p>
-Helped us grow our online presence.
-</p>
-<h4>Local Brand</h4>
-</div>
-
-</div>
-
-</section>
-<!-- FAQ -->
-
-<section class="section faq-section">
-
-<div class="section-header">
-<h2 data-en="Frequently Asked Questions" data-ku="پرسیارە باوەکان" data-ar="الأسئلة الشائعة"> Frequently Asked Questions </h2>
-<p data-en="Click a question to view the answer." data-ku="کلیک لەسەر پرسیارێک بکە بۆ بینینی وەڵام." data-ar="اضغط على أي سؤال لعرض الإجابة."> Click a question to view the answer. </p>
-</div>
-
-<div class="faq-container">
-
-<div class="faq-item">
-<button class="faq-question">
-How long does a website take?
-</button>
-<div class="faq-answer">
-<p>
-Most websites are completed within 1–4 weeks depending on size and features.
-</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">
-Do you provide support after launch?
-</button>
-<div class="faq-answer">
-<p>
-Yes. We provide ongoing support, updates and maintenance.
-</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">
-Can you manage social media accounts?
-</button>
-<div class="faq-answer">
-<p>
-Yes. We offer content creation, posting schedules and growth strategies.
-</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">
-Can I request custom features?
-</button>
-<div class="faq-answer">
-<p>
-Absolutely. Every project can be customized to fit your business needs.
-</p>
-</div>
-</div>
-
-</div>
-
-</section>
-
-<!-- ABOUT -->
-
-<section id="about" class="section about-section">
-
-<div class="section-header">
-<h2 data-en="About Tala Management" data-ku="دەربارەی تەلا مانەجمەنت" data-ar="حول تالا مانجمنت"> About Tala Management </h2>
-</div>
-
-<div class="about-card">
-
-<p>
-Tala Management helps businesses establish a strong online presence through
-professional websites, branding, logo design, social media management,
-photo editing, SEO and digital marketing.
-</p>
-
-<p>
-Our goal is simple:
-help local businesses grow faster, look more professional,
-and attract more customers online.
-</p>
-
-</div>
-
-</section>
 <section class="section">
-<div class="section-header">
-<h2>Request a Quote</h2>
-<p>Fill out the form and we'll prepare a quote for your project.</p>
-</div>
-<div class="calculator-card">
-<input type="text" id="quoteName" placeholder="Your Name">
-<input type="email" id="quoteEmail" placeholder="Your Email">
-<input type="tel" id="quotePhone" placeholder="Phone Number">
-<select id="quoteService">
-<option>Website Development</option>
-<option>Social Media Management</option>
-<option>Logo Design</option>
-<option>Video Editing</option>
-<option>SEO Optimization</option>
-</select>
-<textarea
-id="quoteDetails"
-placeholder="Tell us about your project"
-rows="6"></textarea>
 
-<button id="sendQuote" class="btn primary-btn">
-Request Quote
-</button>
+<h2 class="title">Process / پرۆسە / العملية</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Step 1</h3>
+<p data-en="We analyze your business"
+data-ku="شیکردنەوەی بزنس"
+data-ar="تحليل العمل">
+We analyze your business</p>
+</div>
+
+<div class="card">
+<h3>Step 2</h3>
+<p data-en="We design strategy"
+data-ku="دیزاینی ستراتیژی"
+data-ar="تصميم الاستراتيجية">
+We design strategy</p>
+</div>
+
+<div class="card">
+<h3>Step 3</h3>
+<p data-en="We build system"
+data-ku="دروستکردنی سیستەم"
+data-ar="بناء النظام">
+We build system</p>
+</div>
+
+<div class="card">
+<h3>Step 4</h3>
+<p data-en="We launch project"
+data-ku="بەکارخستن"
+data-ar="إطلاق المشروع">
+We launch project</p>
+</div>
 
 </div>
+
 </section>
 
-<script>
-document.getElementById("sendQuote").addEventListener("click", function(){
+<!-- =========================
+PORTFOLIO EXPANDED
+========================= -->
 
-const name = document.getElementById("quoteName").value;
-const email = document.getElementById("quoteEmail").value;
-const phone = document.getElementById("quotePhone").value;
-const service = document.getElementById("quoteService").value;
-const details = document.getElementById("quoteDetails").value;
+<section class="section">
 
-const message =
-`New Quote Request
+<h2 class="title">Portfolio / نمونەکار / الأعمال</h2>
 
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Service: ${service}
+<div class="grid">
 
-Details:
-${details}`;
-
-window.open(
-`https://wa.me/9647515847687?text=${encodeURIComponent(message)}`,
-'_blank'
-);
-
-});
-</script>
-  i 
-<!-- CONTACT -->
-
-<section id="contact" class="section contact-section">
-
-<div class="section-header">
-<h2 data-en="Get In Touch" data-ku="پەیوەندیمان پێوە بکە" data-ar="تواصل معنا"> Get In Touch </h2>
-<p>
-Ready to start your project?
-</p>
+<div class="card">
+<h3>Restaurant System</h3>
+<p data-en="Online ordering platform"
+data-ku="سیستەمی فەرۆشتن"
+data-ar="نظام طلبات">
+Online ordering platform</p>
 </div>
 
-<div class="contact-grid">
+<div class="card">
+<h3>Car Dealership</h3>
+<p data-en="Vehicle showcase website"
+data-ku="پیشاندانی ئۆتۆمبێل"
+data-ar="عرض سيارات">
+Vehicle showcase website</p>
+</div>
 
-<div class="contact-card">
+<div class="card">
+<h3>Gym Website</h3>
+<p data-en="Fitness membership system"
+data-ku="جیم سیستەم"
+data-ar="نادي رياضي">
+Fitness membership system</p>
+</div>
 
-<h3>WhatsApp</h3>
+<div class="card">
+<h3>Real Estate</h3>
+<p data-en="Property listing platform"
+data-ku="موڵک"
+data-ar="عقارات">
+Property listing platform</p>
+</div>
 
-<p>
-+964 751 584 7687
-</p>
+<div class="card">
+<h3>Medical Clinic</h3>
+<p data-en="Appointment system"
+data-ku="نۆرینگە"
+data-ar="عيادة">
+Appointment system</p>
+</div>
 
-<a
-href="https://wa.me/9647515847687"
-class="btn primary-btn">
-
-Chat Now
-
-</a>
+<div class="card">
+<h3>Education Platform</h3>
+<p data-en="Online learning system"
+data-ku="فێرگە"
+data-ar="تعليم">
+Online learning system</p>
+</div>
 
 </div>
 
-<div class="contact-card">
+</section>
 
+<!-- =========================
+TEAM SECTION
+========================= -->
+
+<section class="section">
+
+<h2 class="title">Team / تیم / الفريق</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>CEO</h3>
+<p data-en="Project leader & strategist"
+data-ku="بەڕێوەبەر"
+data-ar="مدير">
+Project leader & strategist</p>
+</div>
+
+<div class="card">
+<h3>Designer</h3>
+<p data-en="UI/UX specialist"
+data-ku="دیزاین"
+data-ar="تصميم">
+UI/UX specialist</p>
+</div>
+
+<div class="card">
+<h3>Developer</h3>
+<p data-en="Full stack engineer"
+data-ku="پرۆگرامەر"
+data-ar="مطور">
+Full stack engineer</p>
+</div>
+
+<div class="card">
+<h3>Marketing</h3>
+<p data-en="Growth & ads manager"
+data-ku="مارکێتینگ"
+data-ar="تسويق">
+Growth & ads manager</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+TESTIMONIALS
+========================= -->
+
+<section class="section">
+
+<h2 class="title">Testimonials / کڕیاران / العملاء</h2>
+
+<div class="grid">
+
+<div class="card">
+<p>★★★★★</p>
+<p data-en="Amazing service and fast delivery"
+data-ku="خزمەتگوزاری زۆر باش"
+data-ar="خدمة ممتازة">
+Amazing service and fast delivery</p>
+</div>
+
+<div class="card">
+<p>★★★★★</p>
+<p data-en="Professional website design"
+data-ku="دیزاینی پیشەیی"
+data-ar="تصميم احترافي">
+Professional website design</p>
+</div>
+
+<div class="card">
+<p>★★★★★</p>
+<p data-en="Helped my business grow online"
+data-ku="بزنس گەشەی کرد"
+data-ar="نمو الأعمال">
+Helped my business grow online</p>
+</div>
+
+<div class="card">
+<p>★★★★★</p>
+<p data-en="Great communication and support"
+data-ku="پشتگیری باش"
+data-ar="دعم ممتاز">
+Great communication and support</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+FAQ SECTION (LONG)
+========================= -->
+
+<section class="section">
+
+<h2 class="title">FAQ / پرسیارەکان / الأسئلة</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>How long does a website take?</h3>
+<p data-en="1–3 weeks depending on project"
+data-ku="1-3 هەفتە"
+data-ar="1-3 أسابيع">
+1–3 weeks depending on project</p>
+</div>
+
+<div class="card">
+<h3>Do you provide support?</h3>
+<p data-en="Yes 24/7 support available"
+data-ku="پشتگیری 24/7"
+data-ar="دعم دائم">
+Yes 24/7 support available</p>
+</div>
+
+<div class="card">
+<h3>Can I request changes?</h3>
+<p data-en="Yes unlimited revisions"
+data-ku="گۆڕانکاری"
+data-ar="تعديلات">
+Yes unlimited revisions</p>
+</div>
+
+<div class="card">
+<h3>Do you build mobile apps?</h3>
+<p data-en="Yes basic systems available"
+data-ku="ئەپ"
+data-ar="تطبيقات">
+Yes basic systems available</p>
+</div>
+
+<div class="card">
+<h3>Is SEO included?</h3>
+<p data-en="Yes in premium packages"
+data-ku="SEO هەیە"
+data-ar="SEO متوفر">
+Yes in premium packages</p>
+</div>
+
+<div class="card">
+<h3>Can you redesign old websites?</h3>
+<p data-en="Yes full redesign service"
+data-ku="نوێکردنەوە"
+data-ar="إعادة تصميم">
+Yes full redesign service</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+CONTACT EXPANSION
+========================= -->
+
+<section class="section">
+
+<h2 class="title">Contact / پەیوەندی / اتصال</h2>
+
+<div class="grid">
+
+<div class="card">
 <h3>Email</h3>
+<p>tala@example.com</p>
+</div>
 
-<p>
-talaheadquarters@gmail.com
-</p>
+<div class="card">
+<h3>WhatsApp</h3>
+<p>+964 751 584 7687</p>
+</div>
 
-<a
-href="mailto:talaheadquarters@gmail.com"
-class="btn secondary-btn">
+<div class="card">
+<h3>Location</h3>
+<p data-en="Iraq - Kurdistan"
+data-ku="هەولێر"
+data-ar="العراق">
+Iraq - Kurdistan</p>
+</div>
 
-Send Email
+</div>
 
-</a>
+</section>
+<!-- =========================
+BLOG SECTION
+========================= -->
 
+<section class="section">
+
+<h2 class="title">Blog / بلاگ / المدونة</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Why Every Business Needs a Website</h3>
+<p data-en="A website increases trust and sales"
+data-ku="وێبسایت متمانە زیاد دەکات"
+data-ar="الموقع يزيد الثقة">
+A website increases trust and sales</p>
+</div>
+
+<div class="card">
+<h3>SEO Basics Explained</h3>
+<p data-en="Rank higher on Google easily"
+data-ku="پێشکەوتن لە گووگڵ"
+data-ar="تحسين Google">
+Rank higher on Google easily</p>
+</div>
+
+<div class="card">
+<h3>Social Media Growth Tips</h3>
+<p data-en="Grow followers organically"
+data-ku="گەشەپێدان"
+data-ar="نمو المتابعين">
+Grow followers organically</p>
+</div>
+
+<div class="card">
+<h3>Branding Psychology</h3>
+<p data-en="How brands influence customers"
+data-ku="براندینگ"
+data-ar="العلامة التجارية">
+How brands influence customers</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- FINAL CALL TO ACTION -->
+<!-- =========================
+EXTRA SERVICES EXPANSION
+========================= -->
 
-<section class="cta-section">
+<section class="section">
 
-<h2
-data-en="Ready To Grow Your Business?"
-data-ku="ئامادەیت بزنسەکەت گەشە بکات؟"
-data-ar="هل أنت مستعد لتنمية أعمالك؟">
-Ready To Grow Your Business?
-</h2>
+<h2 class="title">More Services / زیادتر / خدمات إضافية</h2>
 
-<p>
-Let's build your next website and digital presence.
-</p>
+<div class="grid">
 
-<a
-href="https://wa.me/9647515847687?text=Hi%20Tala%20Management,%20I%20would%20like%20a%20free%20consultation"
-class="btn primary-btn">
+<div class="card"><h3>UI/UX Design</h3><p>Modern interfaces</p></div>
+<div class="card"><h3>Mobile Optimization</h3><p>Fast mobile UI</p></div>
+<div class="card"><h3>App Design</h3><p>Basic mobile apps</p></div>
+<div class="card"><h3>Automation Systems</h3><p>Business automation</p></div>
+<div class="card"><h3>Brand Strategy</h3><p>Market positioning</p></div>
+<div class="card"><h3>Content Creation</h3><p>Posts & media</p></div>
+<div class="card"><h3>Video Editing</h3><p>Ads & reels</p></div>
+<div class="card"><h3>Analytics</h3><p>Business tracking</p></div>
 
-Get Free Consultation
-
-</a>
+</div>
 
 </section>
 
-<!-- FLOATING WHATSAPP -->
+<!-- =========================
+CTA SECTION
+========================= -->
 
-<a
-href="https://wa.me/9647515847687"
-class="floating-whatsapp">
+<section class="section">
 
-💬
+<div class="card" style="text-align:center;padding:60px">
 
-</a>
+<h2>Start Your Project Today</h2>
 
-<!-- FOOTER -->
+<p data-en="We build everything from scratch"
+data-ku="ئێمە هەموو شتێک دروست دەکەین"
+data-ar="نحن نبني كل شيء">
+We build everything from scratch</p>
 
-<footer class="footer">
+<br>
 
-<div class="footer-logo">
-Tala Management
+<button class="btn primary">Get Free Consultation</button>
+
 </div>
 
-<p>
-Professional Websites • Branding • Social Media • Marketing
-</p>
+</section>
 
-<p>
-Erbil, Kurdistan Region, Iraq
-</p>
+<!-- =========================
+SITEMAP FOOTER (EXPANDED)
+========================= -->
 
-<p>
-© 2026 Tala Management. All Rights Reserved.
-</p>
+<footer class="section">
+
+<div class="grid">
+
+<div class="card">
+<h3>Tala Management</h3>
+<p data-en="Digital agency for modern businesses"
+data-ku="ئەجێنسی دیجیتاڵ"
+data-ar="وكالة رقمية">
+Digital agency for modern businesses</p>
+</div>
+
+<div class="card">
+<h3>Pages</h3>
+<p>Home</p>
+<p>Services</p>
+<p>Pricing</p>
+<p>Portfolio</p>
+<p>Contact</p>
+</div>
+
+<div class="card">
+<h3>Services</h3>
+<p>Web Development</p>
+<p>SEO</p>
+<p>Marketing</p>
+<p>Design</p>
+<p>Automation</p>
+</div>
+
+<div class="card">
+<h3>Contact</h3>
+<p>+964 751 584 7687</p>
+<p>tala@example.com</p>
+<p>Iraq - Kurdistan</p>
+</div>
+
+</div>
 
 </footer>
 
-<script src="script.js"></script>
+<!-- =========================
+FINAL FOOTER
+========================= -->
+
+<footer style="text-align:center;padding:40px;opacity:.7">
+
+<p>© 2026 Tala Management — All Rights Reserved</p>
+
+<p data-en="Built for growth and success"
+data-ku="بۆ گەشە و سەرکەوتن"
+data-ar="للنمو والنجاح">
+Built for growth and success</p>
+
+</footer>
 
 </body>
 </html>
