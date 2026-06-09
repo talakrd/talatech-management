@@ -1,202 +1,216 @@
 // =========================
-// LANGUAGE SYSTEM
+// 🌍 LANGUAGE SYSTEM (IMPROVED)
 // =========================
 function setLanguage(lang) {
-localStorage.setItem("language", lang);
-document.querySelectorAll("[data-en]").forEach(element => {
-if(element.dataset[lang]){
-element.innerHTML = element.dataset[lang];
+  localStorage.setItem("language", lang);
+
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const text = el.dataset[lang];
+    if (text) {
+      el.style.opacity = 0;
+      setTimeout(() => {
+        el.innerHTML = text;
+        el.style.opacity = 1;
+      }, 150);
+    }
+  });
+
+  document.body.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
 }
-});
-if(lang === "ar"){
-document.body.setAttribute("dir","rtl");
-} else {
-document.body.setAttribute("dir","ltr");
-}
-}
+
 document.addEventListener("DOMContentLoaded", () => {
-const savedLanguage =
-localStorage.getItem("language") || "en";
-setLanguage(savedLanguage);
+  setLanguage(localStorage.getItem("language") || "en");
 });
+
+
 // =========================
-// COUNTERS
+// ✨ SCROLL REVEAL (NEW PREMIUM FEEL)
 // =========================
-const counters = document.querySelectorAll('.counter');
-counters.forEach(counter => {
-const updateCounter = () => {
-const target =
-+counter.getAttribute('data-target');
-const current =
-+counter.innerText;
-const increment =
-target / 100;
-if(current < target){
-counter.innerText =
-Math.ceil(current + increment);
-setTimeout(updateCounter,20);
-}else{
-counter.innerText = target;
+const revealElements = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
+
+  revealElements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+
+    if (top < windowHeight - 100) {
+      el.classList.add("active");
+    }
+  });
 }
-};
-updateCounter();
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
+
+// =========================
+// 🔢 COUNTERS (SMOOTH + FIXED)
+// =========================
+document.querySelectorAll('.counter').forEach(counter => {
+  function update() {
+    const target = parseInt(counter.dataset.target || "0");
+    let current = parseInt(counter.innerText || "0");
+
+    const step = Math.ceil(target / 120);
+
+    if (current < target) {
+      counter.innerText = current + step;
+      setTimeout(update, 20);
+    } else {
+      counter.innerText = target;
+    }
+  }
+
+  update();
 });
+
+
 // =========================
-// FAQ
+// ❓ FAQ (SMOOTHER TOGGLE)
 // =========================
-const faqItems =
-document.querySelectorAll('.faq-item');
-faqItems.forEach(item => {
-const button =
-item.querySelector('.faq-question');
-button.addEventListener('click', () => {
-item.classList.toggle('active');
+document.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.faq-question');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    item.classList.toggle('active');
+  });
 });
+
+
+// =========================
+// 📦 SERVICES EXPAND (IMPROVED UI)
+// =========================
+document.querySelectorAll('.expand-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const details = btn.nextElementSibling;
+    if (!details) return;
+
+    const open = details.style.maxHeight;
+
+    if (open) {
+      details.style.maxHeight = null;
+      btn.innerText = "Learn More";
+    } else {
+      details.style.maxHeight = details.scrollHeight + "px";
+      btn.innerText = "Show Less";
+    }
+  });
 });
+
+
 // =========================
-// SERVICES
+// 💰 PRICE CALCULATOR (CLEANER)
 // =========================
-const expandButtons =
-document.querySelectorAll('.expand-btn');
-expandButtons.forEach(button => {
-button.addEventListener('click', () => {
-const details =
-button.nextElementSibling;
-if(details.style.display === 'block'){
-details.style.display = 'none';
-button.innerText = 'Learn More';
-}else{
-details.style.display = 'block';
-button.innerText = 'Show Less';
+const websiteType = document.getElementById("websiteType");
+const logoOption = document.getElementById("logoOption");
+const seoOption = document.getElementById("seoOption");
+const socialOption = document.getElementById("socialOption");
+const totalPrice = document.getElementById("totalPrice");
+const quoteButton = document.getElementById("quoteButton");
+
+function updatePrice() {
+  if (!websiteType || !totalPrice) return;
+
+  let total = Number(websiteType.value || 0);
+
+  if (logoOption?.checked) total += 15;
+  if (seoOption?.checked) total += 50;
+  if (socialOption?.checked) total += 75;
+
+  totalPrice.innerText = "$" + total;
+
+  // live WhatsApp preview
+  if (quoteButton) {
+    quoteButton.href =
+      `https://wa.me/9647515847687?text=Hi Tala Management, I need a quote. Estimated package: $${total}`;
+  }
 }
+
+[websiteType, logoOption, seoOption, socialOption].forEach(el => {
+  el?.addEventListener("change", updatePrice);
 });
-});
-// =========================
-// CALCULATOR
-// =========================
-const websiteType =
-document.getElementById('websiteType');
-const logoOption =
-document.getElementById('logoOption');
-const seoOption =
-document.getElementById('seoOption');
-const socialOption =
-document.getElementById('socialOption');
-const totalPrice =
-document.getElementById('totalPrice');
-const quoteButton =
-document.getElementById('quoteButton');
-function updatePrice(){
-if(!websiteType) return;
-let total =
-Number(websiteType.value);
-if(logoOption.checked){
-total += 15;
-}
-if(seoOption.checked){
-total += 50;
-}
-if(socialOption.checked){
-total += 75;
-}
-totalPrice.innerText =
-'$' + total;
-if(quoteButton){
-quoteButton.href =
-`https://wa.me/9647515847687?text=Hi Tala Management, I would like a quote for a package worth $${total}`;
-}
-}
-if(websiteType){
-websiteType.addEventListener(
-'change',
-updatePrice
-);
-logoOption.addEventListener(
-'change',
-updatePrice
-);
-seoOption.addEventListener(
-'change',
-updatePrice
-);
-socialOption.addEventListener(
-'change',
-updatePrice
-);
+
 updatePrice();
+
+
+// =========================
+// ⭐ TESTIMONIALS (SMOOTHER + SAFE)
+// =========================
+const testimonials = document.querySelectorAll(".testimonial");
+let current = 0;
+
+if (testimonials.length > 1) {
+  setInterval(() => {
+    testimonials[current].classList.remove("active");
+    current = (current + 1) % testimonials.length;
+    testimonials[current].classList.add("active");
+  }, 4500);
 }
+
+
 // =========================
-// TESTIMONIALS
+// 🔗 SMOOTH SCROLL (FIXED)
 // =========================
-const testimonials =
-document.querySelectorAll(
-'.testimonial'
-);
-let currentSlide = 0;
-if(testimonials.length){
-setInterval(() => {
-testimonials[currentSlide]
-.classList.remove('active');
-currentSlide++;
-if(currentSlide >=
-testimonials.length){
-currentSlide = 0;
-}
-testimonials[currentSlide]
-.classList.add('active');
-},4000);
-}
-// =========================
-// SMOOTH SCROLL
-// =========================
-document
-.querySelectorAll('a[href^="#"]')
-.forEach(anchor => {
-anchor.addEventListener(
-'click',
-function(e){
-e.preventDefault();
-const target =
-document.querySelector(
-this.getAttribute('href')
-);
-if(target){
-target.scrollIntoView({
-behavior:'smooth'
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener("click", e => {
+    const href = a.getAttribute("href");
+
+    if (href && href.length > 1) {
+      const target = document.querySelector(href);
+
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  });
 });
-}
-});
-});
+
+
 // =========================
-// LOADED
+// 📩 PROFESSIONAL QUOTE SYSTEM (UPGRADED)
 // =========================
-console.log(
-'Tala Management Loaded Successfully'
-);
-console.log('Tala Management Loaded');
+function sendQuote() {
+  const name = document.getElementById("quoteName")?.value.trim();
+  const email = document.getElementById("quoteEmail")?.value.trim();
+  const phone = document.getElementById("quotePhone")?.value.trim();
+  const service = document.getElementById("quoteService")?.value;
+  const details = document.getElementById("quoteDetails")?.value.trim();
 
-function sendQuote(){
+  // validation
+  if (!name || !email || !phone) {
+    alert("Please fill in all required fields.");
+    return;
+  }
 
-const name = document.getElementById("quoteName").value;
-const email = document.getElementById("quoteEmail").value;
-const phone = document.getElementById("quotePhone").value;
-const service = document.getElementById("quoteService").value;
-const details = document.getElementById("quoteDetails").value;
+  const message =
+`🚀 New Quote Request - Tala Management
 
-const message =
-`Hello Tala Management,
+👤 Name: ${name}
+📧 Email: ${email}
+📞 Phone: ${phone}
+💼 Service: ${service}
 
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Service: ${service}
+📝 Details:
+${details || "No extra details provided"}`;
 
-Details:
-${details}`;
+  // success animation (optional UI hook)
+  const btn = document.getElementById("sendQuoteBtn");
+  if (btn) {
+    btn.innerText = "Sending...";
+    setTimeout(() => btn.innerText = "Send Quote", 1500);
+  }
 
-window.open(
-`https://wa.me/9647515847687?text=${encodeURIComponent(message)}`,
-'_blank'
-);
-
+  window.open(
+    `https://wa.me/9647515847687?text=${encodeURIComponent(message)}`,
+    "_blank"
+  );
 }
+
+
+// =========================
+// ✨ LOADED + POLISH LOG
+// =========================
+console.log("🚀 Tala Management Premium Build Loaded");
